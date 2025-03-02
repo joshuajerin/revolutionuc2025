@@ -1,0 +1,1 @@
+ NC(=O)C(=O)N1C[C@H]2C(NC(=O)c3cncc4nc[nH]c34)[C@@H]2C1
