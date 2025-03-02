@@ -1,0 +1,11 @@
+SMILES,Effectiveness
+CCO,0.17
+CC(=O)O,0.76
+c1ccccc1,0.02
+CCOC,0.17
+CCN(CC)CC,0.69
+C1CCCCC1,0.37
+O=Cc1ccccc1,0.61
+c1ccncc1,0.96
+Oc1ccccc1,0.03
+Clc1ccccc1,0.63
