@@ -1,6 +1,6 @@
-The molecule with SMILES: NC(=O)C(=O)N1C[C@H]2C(NC(=O)c3cncc4nc[nH]c34)[C@@H]2C1 has the following properties:
-Molecular weight: 314.31 g/mol
-LogP (lipophilicity): -1.37
-Number of hydrogen bond acceptors: 5
-Number of hydrogen bond donors: 3
-Number of rotatable bonds: 2
+The molecule with SMILES: CC(C)N(C)C(=O)[C@@H](C)N1CCO[C@H](C(=O)O)C1 has the following properties:
+Molecular weight: 258.32 g/mol
+LogP (lipophilicity): 0.03
+Number of hydrogen bond acceptors: 4
+Number of hydrogen bond donors: 1
+Number of rotatable bonds: 4

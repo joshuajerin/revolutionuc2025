@@ -62,12 +62,12 @@ def main():
         df_ranked[["smiles", "similarity_score", "prediction", "final_score"]].to_csv(final_output_csv, index=False)
         
         # Print top candidate
-        top_candidate = df_ranked.iloc[0]
-        print("\nTop Recommended Antibiotic Candidate:")
-        print(f"SMILES: {top_candidate['smiles']}")
-        print(f"Predicted Inhibition: {top_candidate['prediction']:.4f}")
-        print(f"Similarity Score: {top_candidate['similarity_score']:.4f}")
-        print(f"Final Score: {top_candidate['final_score']:.4f}")
+        #top_candidate = df_ranked.iloc[0]
+       # print("\nTop Recommended Antibiotic Candidate:")
+        #print(f"SMILES: {top_candidate['smiles']}")
+        #print(f"Predicted Inhibition: {top_candidate['prediction']:.4f}")
+        #print(f"Similarity Score: {top_candidate['similarity_score']:.4f}")
+        #print(f"Final Score: {top_candidate['final_score']:.4f}")
         
         logger.info(f"Final recommendations saved to '{final_output_csv}'")
         

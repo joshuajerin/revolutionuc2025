@@ -155,11 +155,6 @@ const Dashboard = () => {
                 </p>
               </div>
 
-              {error && (
-                <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
-                  <p className="text-red-600">{error}</p>
-                </div>
-              )}
 
               {result && (
                 <div className="space-y-4">
