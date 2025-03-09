@@ -72,8 +72,19 @@ async def run_simulation(request: SimulationRequest):
             **os.environ,
             "PATH": f"{os.path.join(CONDA_ENV_PATH, 'bin')}{os.pathsep}{os.environ.get('PATH', '')}",
             "CONDA_PREFIX": CONDA_ENV_PATH,
-            "PYTHONPATH": CONDA_ENV_PATH
+            "PYTHONPATH": CONDA_ENV_PATH,
+            "AWS_DEFAULT_REGION": "us-east-1",
+            "PYTHONUNBUFFERED": "1",
+            # Pass AWS credentials from environment
+            "AWS_ACCESS_KEY_ID": os.environ.get("AWS_ACCESS_KEY_ID", ""),
+            "AWS_SECRET_ACCESS_KEY": os.environ.get("AWS_SECRET_ACCESS_KEY", ""),
+            "AWS_SESSION_TOKEN": os.environ.get("AWS_SESSION_TOKEN", "")
         }
+        
+        logger.info("=== Starting Simulation Process ===")
+        logger.info("AWS Region: us-east-1")
+        logger.info(f"AWS Access Key ends with: ...{env.get('AWS_ACCESS_KEY_ID', '')[-4:] if env.get('AWS_ACCESS_KEY_ID') else 'not set'}")
+        logger.info(f"Session Token present: {bool(env.get('AWS_SESSION_TOKEN'))}")
         
         # Create a subprocess to run the simulation with the SMILES string as an argument
         process = await asyncio.create_subprocess_exec(
@@ -82,7 +93,7 @@ async def run_simulation(request: SimulationRequest):
             request.input_text.strip(),
             stdout=asyncio.subprocess.PIPE,
             stderr=asyncio.subprocess.PIPE,
-            cwd=os.path.dirname(main_py_path),  # Set working directory to new_main folder
+            cwd=os.path.dirname(main_py_path),
             env=env
         )
         
